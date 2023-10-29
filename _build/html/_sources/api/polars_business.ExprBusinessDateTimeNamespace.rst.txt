@@ -1,0 +1,25 @@
+﻿polars\_business.ExprBusinessDateTimeNamespace
+==============================================
+
+.. currentmodule:: polars_business
+
+.. autoclass:: ExprBusinessDateTimeNamespace
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExprBusinessDateTimeNamespace.__init__
+      ~ExprBusinessDateTimeNamespace.is_workday
+      ~ExprBusinessDateTimeNamespace.offset_by
+      ~ExprBusinessDateTimeNamespace.sub
+   
+   
+
+   
+   
+   

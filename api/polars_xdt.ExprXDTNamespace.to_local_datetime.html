@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>polars_xdt.ExprXDTNamespace.offset_by &#8212; polars-xdt  documentation</title>
+    <title>polars_xdt.ExprXDTNamespace.to_local_datetime &#8212; polars-xdt  documentation</title>
   
   
   
@@ -43,11 +43,10 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api/polars_xdt.ExprXDTNamespace.offset_by';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/polars_xdt.ExprXDTNamespace.to_local_datetime';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="polars_xdt.ExprXDTNamespace.is_workday" href="polars_xdt.ExprXDTNamespace.is_workday.html" />
-    <link rel="prev" title="polars_xdt.workday_count" href="polars_xdt.workday_count.html" />
+    <link rel="prev" title="polars_xdt.ExprXDTNamespace.from_local_datetime" href="polars_xdt.ExprXDTNamespace.from_local_datetime.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -293,10 +292,10 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.date_range.html">polars_xdt.date_range</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.workday_count.html">polars_xdt.workday_count</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">polars_xdt.ExprXDTNamespace.offset_by</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.offset_by.html">polars_xdt.ExprXDTNamespace.offset_by</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.is_workday.html">polars_xdt.ExprXDTNamespace.is_workday</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.from_local_datetime.html">polars_xdt.ExprXDTNamespace.from_local_datetime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.to_local_datetime.html">polars_xdt.ExprXDTNamespace.to_local_datetime</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">polars_xdt.ExprXDTNamespace.to_local_datetime</a></li>
 </ul>
 </div>
 </nav></div>
@@ -354,102 +353,51 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="polars-xdt-exprxdtnamespace-offset-by">
-<h1>polars_xdt.ExprXDTNamespace.offset_by<a class="headerlink" href="#polars-xdt-exprxdtnamespace-offset-by" title="Link to this heading">#</a></h1>
+  <section id="polars-xdt-exprxdtnamespace-to-local-datetime">
+<h1>polars_xdt.ExprXDTNamespace.to_local_datetime<a class="headerlink" href="#polars-xdt-exprxdtnamespace-to-local-datetime" title="Link to this heading">#</a></h1>
 <dl class="py method">
-<dt class="sig sig-object py" id="polars_xdt.ExprXDTNamespace.offset_by">
-<span class="sig-prename descclassname"><span class="pre">ExprXDTNamespace.</span></span><span class="sig-name descname"><span class="pre">offset_by</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('Sat',</span> <span class="pre">'Sun')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holidays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">date</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roll</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'raise'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'forward'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'backward'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'raise'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">xdtExpr</span></span></span><a class="headerlink" href="#polars_xdt.ExprXDTNamespace.offset_by" title="Link to this definition">#</a></dt>
-<dd><p>Offset this date by a relative time offset.</p>
+<dt class="sig sig-object py" id="polars_xdt.ExprXDTNamespace.to_local_datetime">
+<span class="sig-prename descclassname"><span class="pre">ExprXDTNamespace.</span></span><span class="sig-name descname"><span class="pre">to_local_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_zone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Expr</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">xdtExpr</span></span></span><a class="headerlink" href="#polars_xdt.ExprXDTNamespace.to_local_datetime" title="Link to this definition">#</a></dt>
+<dd><p>Convert to local datetime in given time zone.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>by</strong></dt><dd><p>The offset to apply. This can be a string of the form “nbd” (where n
-is an integer), or a polars expression that evaluates to such a string.
-Additional units are passed to <cite>polars.dt.offset_by</cite>.</p>
-</dd>
-<dt><strong>weekend</strong></dt><dd><p>The days of the week that are considered weekends. Defaults to (“Sat”, “Sun”).</p>
-</dd>
-<dt><strong>holidays</strong></dt><dd><p>The holidays to exclude from the calculation. Defaults to None.</p>
-</dd>
-<dt><strong>roll</strong></dt><dd><p>How to handle dates that fall on a non-workday.</p>
-<ul class="simple">
-<li><p>“raise” raise an error (default).</p></li>
-<li><p>“forward” roll forward to the next business day.</p></li>
-<li><p>“backward” roll backward to the previous business day.</p></li>
-</ul>
+<dt><strong>time_zone</strong></dt><dd><p>Time zone to convert to.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt>polars.Expr</dt><dd></dd>
+<dt>Expr</dt><dd><p>Expression of data type <code class="xref py py-class docutils literal notranslate"><span class="pre">DateTime</span></code>.</p>
+</dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">polars</span> <span class="k">as</span> <span class="nn">pl</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">polars_xdt</span>  <span class="c1"># noqa: F401</span>
+<p>You can use <cite>to_local_datetime</cite> to figure out how a tz-aware datetime
+will be expressed as a local datetime.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]}</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">date_shifted</span><span class="o">=</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">xdt</span><span class="o">.</span><span class="n">offset_by</span><span class="p">(</span><span class="s2">&quot;1bd&quot;</span><span class="p">),</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="go">shape: (3, 2)</span>
-<span class="go">┌────────────┬──────────────┐</span>
-<span class="go">│ date       ┆ date_shifted │</span>
-<span class="go">│ ---        ┆ ---          │</span>
-<span class="go">│ date       ┆ date         │</span>
-<span class="go">╞════════════╪══════════════╡</span>
-<span class="go">│ 2023-04-03 ┆ 2023-04-04   │</span>
-<span class="go">│ 2023-09-01 ┆ 2023-09-04   │</span>
-<span class="go">│ 2024-01-04 ┆ 2024-01-05   │</span>
-<span class="go">└────────────┴──────────────┘</span>
-</pre></div>
-</div>
-<p>You can also specify custom weekends and holidays:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">holidays</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">holidays_england</span> <span class="o">=</span> <span class="n">holidays</span><span class="o">.</span><span class="n">country_holidays</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="s2">&quot;UK&quot;</span><span class="p">,</span> <span class="n">subdiv</span><span class="o">=</span><span class="s2">&quot;ENG&quot;</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">2024</span><span class="p">]</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">date_shifted</span><span class="o">=</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">xdt</span><span class="o">.</span><span class="n">offset_by</span><span class="p">(</span>
-<span class="gp">... </span>        <span class="s2">&quot;5bd&quot;</span><span class="p">,</span>
-<span class="gp">... </span>        <span class="n">holidays</span><span class="o">=</span><span class="n">holidays_england</span><span class="p">,</span>
-<span class="gp">... </span>        <span class="n">weekend</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">],</span>
-<span class="gp">... </span>        <span class="n">roll</span><span class="o">=</span><span class="s2">&quot;backward&quot;</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="p">),</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="go">shape: (3, 2)</span>
-<span class="go">┌────────────┬──────────────┐</span>
-<span class="go">│ date       ┆ date_shifted │</span>
-<span class="go">│ ---        ┆ ---          │</span>
-<span class="go">│ date       ┆ date         │</span>
-<span class="go">╞════════════╪══════════════╡</span>
-<span class="go">│ 2023-04-03 ┆ 2023-04-11   │</span>
-<span class="go">│ 2023-09-01 ┆ 2023-09-07   │</span>
-<span class="go">│ 2024-01-04 ┆ 2024-01-11   │</span>
-<span class="go">└────────────┴──────────────┘</span>
-</pre></div>
-</div>
-<p>You can also pass expressions to <cite>by</cite>:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="p">{</span>
-<span class="gp">... </span>        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
-<span class="gp">... </span>        <span class="s2">&quot;by&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1bd&quot;</span><span class="p">,</span> <span class="s2">&quot;2bd&quot;</span><span class="p">,</span> <span class="s2">&quot;-3bd&quot;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="s2">&quot;date_col&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s2">&quot;timezone&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Europe/London&quot;</span><span class="p">,</span> <span class="s2">&quot;Africa/Kigali&quot;</span><span class="p">,</span> <span class="s2">&quot;America/New_York&quot;</span><span class="p">],</span>
 <span class="gp">... </span>    <span class="p">}</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date_col&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">replace_time_zone</span><span class="p">(</span><span class="s2">&quot;UTC&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date_col&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">xdt</span><span class="o">.</span><span class="n">to_local_datetime</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;timezone&quot;</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;local_dt&quot;</span><span class="p">)</span>
 <span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="n">date_shifted</span><span class="o">=</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">xdt</span><span class="o">.</span><span class="n">offset_by</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;by&quot;</span><span class="p">)))</span>
 <span class="go">shape: (3, 3)</span>
-<span class="go">┌────────────┬──────┬──────────────┐</span>
-<span class="go">│ date       ┆ by   ┆ date_shifted │</span>
-<span class="go">│ ---        ┆ ---  ┆ ---          │</span>
-<span class="go">│ date       ┆ str  ┆ date         │</span>
-<span class="go">╞════════════╪══════╪══════════════╡</span>
-<span class="go">│ 2023-04-03 ┆ 1bd  ┆ 2023-04-04   │</span>
-<span class="go">│ 2023-09-01 ┆ 2bd  ┆ 2023-09-05   │</span>
-<span class="go">│ 2024-01-04 ┆ -3bd ┆ 2024-01-01   │</span>
-<span class="go">└────────────┴──────┴──────────────┘</span>
+<span class="go">┌─────────────────────────┬──────────────────┬─────────────────────┐</span>
+<span class="go">│ date_col                ┆ timezone         ┆ local_dt            │</span>
+<span class="go">│ ---                     ┆ ---              ┆ ---                 │</span>
+<span class="go">│ datetime[μs, UTC]       ┆ str              ┆ datetime[μs]        │</span>
+<span class="go">╞═════════════════════════╪══════════════════╪═════════════════════╡</span>
+<span class="go">│ 2020-10-10 00:00:00 UTC ┆ Europe/London    ┆ 2020-10-10 01:00:00 │</span>
+<span class="go">│ 2020-10-10 00:00:00 UTC ┆ Africa/Kigali    ┆ 2020-10-10 02:00:00 │</span>
+<span class="go">│ 2020-10-10 00:00:00 UTC ┆ America/New_York ┆ 2020-10-09 20:00:00 │</span>
+<span class="go">└─────────────────────────┴──────────────────┴─────────────────────┘</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -467,22 +415,13 @@ Additional units are passed to <cite>polars.dt.offset_by</cite>.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="polars_xdt.workday_count.html"
+       href="polars_xdt.ExprXDTNamespace.from_local_datetime.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">polars_xdt.workday_count</p>
+        <p class="prev-next-title">polars_xdt.ExprXDTNamespace.from_local_datetime</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="polars_xdt.ExprXDTNamespace.is_workday.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">polars_xdt.ExprXDTNamespace.is_workday</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -502,14 +441,14 @@ Additional units are passed to <cite>polars.dt.offset_by</cite>.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polars_xdt.ExprXDTNamespace.offset_by"><code class="docutils literal notranslate"><span class="pre">ExprXDTNamespace.offset_by()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polars_xdt.ExprXDTNamespace.to_local_datetime"><code class="docutils literal notranslate"><span class="pre">ExprXDTNamespace.to_local_datetime()</span></code></a></li>
 </ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/api/polars_xdt.ExprXDTNamespace.offset_by.rst.txt">
+    <a href="../_sources/api/polars_xdt.ExprXDTNamespace.to_local_datetime.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

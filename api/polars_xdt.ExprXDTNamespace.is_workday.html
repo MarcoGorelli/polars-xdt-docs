@@ -360,7 +360,50 @@ document.write(`
 <dl class="py method">
 <dt class="sig sig-object py" id="polars_xdt.ExprXDTNamespace.is_workday">
 <span class="sig-prename descclassname"><span class="pre">ExprXDTNamespace.</span></span><span class="sig-name descname"><span class="pre">is_workday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('Sat',</span> <span class="pre">'Sun')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holidays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">date</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expr</span></span></span><a class="headerlink" href="#polars_xdt.ExprXDTNamespace.is_workday" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Determine whether a day is a workday.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>weekend</strong></dt><dd><p>The days of the week that are considered weekends. Defaults to (“Sat”, “Sun”).</p>
+</dd>
+<dt><strong>holidays</strong></dt><dd><p>The holidays to exclude from the calculation. Defaults to None. This should
+be a list of <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code> s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>polars.Expr</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">polars</span> <span class="k">as</span> <span class="nn">pl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">polars_xdt</span>  <span class="c1"># noqa: F401</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">{</span>
+<span class="gp">... </span>        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="gp">... </span>            <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="p">],</span>
+<span class="gp">... </span>    <span class="p">}</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="n">is_workday</span><span class="o">=</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">xdt</span><span class="o">.</span><span class="n">is_workday</span><span class="p">())</span>
+<span class="go">shape: (3, 2)</span>
+<span class="go">┌────────────┬────────────┐</span>
+<span class="go">│ date       ┆ is_workday │</span>
+<span class="go">│ ---        ┆ ---        │</span>
+<span class="go">│ date       ┆ bool       │</span>
+<span class="go">╞════════════╪════════════╡</span>
+<span class="go">│ 2023-01-04 ┆ true       │</span>
+<span class="go">│ 2023-05-01 ┆ true       │</span>
+<span class="go">│ 2023-09-09 ┆ false      │</span>
+<span class="go">└────────────┴────────────┘</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 

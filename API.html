@@ -293,9 +293,10 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.date_range.html">polars_xdt.date_range</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.workday_count.html">polars_xdt.workday_count</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.offset_by.html">polars_xdt.ExprXDTNamespace.offset_by</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.is_workday.html">polars_xdt.ExprXDTNamespace.is_workday</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.format_localized.html">polars_xdt.ExprXDTNamespace.format_localized</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.from_local_datetime.html">polars_xdt.ExprXDTNamespace.from_local_datetime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.is_workday.html">polars_xdt.ExprXDTNamespace.is_workday</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.offset_by.html">polars_xdt.ExprXDTNamespace.offset_by</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.to_local_datetime.html">polars_xdt.ExprXDTNamespace.to_local_datetime</a></li>
 </ul>
 </div>
@@ -361,16 +362,19 @@ document.write(`
 <tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.workday_count.html#polars_xdt.workday_count" title="polars_xdt.workday_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.workday_count</span></code></a>(start, end[, ...])</p></td>
 <td><p>Count the number of workdays between two columns of dates.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.offset_by.html#polars_xdt.ExprXDTNamespace.offset_by" title="polars_xdt.ExprXDTNamespace.offset_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.offset_by</span></code></a>(by, *)</p></td>
-<td><p>Offset this date by a relative time offset.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.format_localized.html#polars_xdt.ExprXDTNamespace.format_localized" title="polars_xdt.ExprXDTNamespace.format_localized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.format_localized</span></code></a>(format)</p></td>
+<td><p>Convert to local datetime in given time zone.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.is_workday.html#polars_xdt.ExprXDTNamespace.is_workday" title="polars_xdt.ExprXDTNamespace.is_workday"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.is_workday</span></code></a>(*[, ...])</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.from_local_datetime.html#polars_xdt.ExprXDTNamespace.from_local_datetime" title="polars_xdt.ExprXDTNamespace.from_local_datetime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.from_local_datetime</span></code></a>(...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.from_local_datetime.html#polars_xdt.ExprXDTNamespace.from_local_datetime" title="polars_xdt.ExprXDTNamespace.from_local_datetime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.from_local_datetime</span></code></a>(...)</p></td>
 <td><p>Converts from local datetime in given time zone to new timezone.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.to_local_datetime.html#polars_xdt.ExprXDTNamespace.to_local_datetime" title="polars_xdt.ExprXDTNamespace.to_local_datetime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.to_local_datetime</span></code></a>(...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.is_workday.html#polars_xdt.ExprXDTNamespace.is_workday" title="polars_xdt.ExprXDTNamespace.is_workday"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.is_workday</span></code></a>(*[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.offset_by.html#polars_xdt.ExprXDTNamespace.offset_by" title="polars_xdt.ExprXDTNamespace.offset_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.offset_by</span></code></a>(by, *)</p></td>
+<td><p>Offset this date by a relative time offset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.to_local_datetime.html#polars_xdt.ExprXDTNamespace.to_local_datetime" title="polars_xdt.ExprXDTNamespace.to_local_datetime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.to_local_datetime</span></code></a>(...)</p></td>
 <td><p>Convert to local datetime in given time zone.</p></td>
 </tr>
 </tbody>

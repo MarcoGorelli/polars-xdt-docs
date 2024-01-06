@@ -46,8 +46,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/polars_xdt.ExprXDTNamespace.offset_by';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="polars_xdt.ExprXDTNamespace.is_workday" href="polars_xdt.ExprXDTNamespace.is_workday.html" />
-    <link rel="prev" title="polars_xdt.workday_count" href="polars_xdt.workday_count.html" />
+    <link rel="next" title="polars_xdt.ExprXDTNamespace.to_local_datetime" href="polars_xdt.ExprXDTNamespace.to_local_datetime.html" />
+    <link rel="prev" title="polars_xdt.ExprXDTNamespace.is_workday" href="polars_xdt.ExprXDTNamespace.is_workday.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -293,9 +293,10 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.date_range.html">polars_xdt.date_range</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.workday_count.html">polars_xdt.workday_count</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">polars_xdt.ExprXDTNamespace.offset_by</a></li>
-<li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.is_workday.html">polars_xdt.ExprXDTNamespace.is_workday</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.format_localized.html">polars_xdt.ExprXDTNamespace.format_localized</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.from_local_datetime.html">polars_xdt.ExprXDTNamespace.from_local_datetime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.is_workday.html">polars_xdt.ExprXDTNamespace.is_workday</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">polars_xdt.ExprXDTNamespace.offset_by</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.to_local_datetime.html">polars_xdt.ExprXDTNamespace.to_local_datetime</a></li>
 </ul>
 </div>
@@ -435,11 +436,17 @@ Additional units are passed to <cite>polars.dt.offset_by</cite>.</p>
 <p>You can also pass expressions to <cite>by</cite>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="p">{</span>
-<span class="gp">... </span>        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+<span class="gp">... </span>        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="gp">... </span>            <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">date</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="p">],</span>
 <span class="gp">... </span>        <span class="s2">&quot;by&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1bd&quot;</span><span class="p">,</span> <span class="s2">&quot;2bd&quot;</span><span class="p">,</span> <span class="s2">&quot;-3bd&quot;</span><span class="p">],</span>
 <span class="gp">... </span>    <span class="p">}</span>
 <span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="n">date_shifted</span><span class="o">=</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">xdt</span><span class="o">.</span><span class="n">offset_by</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;by&quot;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">date_shifted</span><span class="o">=</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">xdt</span><span class="o">.</span><span class="n">offset_by</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;by&quot;</span><span class="p">))</span>
+<span class="gp">... </span><span class="p">)</span>
 <span class="go">shape: (3, 3)</span>
 <span class="go">┌────────────┬──────┬──────────────┐</span>
 <span class="go">│ date       ┆ by   ┆ date_shifted │</span>
@@ -467,20 +474,20 @@ Additional units are passed to <cite>polars.dt.offset_by</cite>.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="polars_xdt.workday_count.html"
+       href="polars_xdt.ExprXDTNamespace.is_workday.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">polars_xdt.workday_count</p>
+        <p class="prev-next-title">polars_xdt.ExprXDTNamespace.is_workday</p>
       </div>
     </a>
     <a class="right-next"
-       href="polars_xdt.ExprXDTNamespace.is_workday.html"
+       href="polars_xdt.ExprXDTNamespace.to_local_datetime.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">polars_xdt.ExprXDTNamespace.is_workday</p>
+        <p class="prev-next-title">polars_xdt.ExprXDTNamespace.to_local_datetime</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

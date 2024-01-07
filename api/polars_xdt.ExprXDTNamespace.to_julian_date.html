@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>polars_xdt.ExprXDTNamespace.to_local_datetime &#8212; polars-xdt  documentation</title>
+    <title>polars_xdt.ExprXDTNamespace.to_julian_date &#8212; polars-xdt  documentation</title>
   
   
   
@@ -43,11 +43,10 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api/polars_xdt.ExprXDTNamespace.to_local_datetime';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/polars_xdt.ExprXDTNamespace.to_julian_date';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="polars_xdt.ExprXDTNamespace.to_julian_date" href="polars_xdt.ExprXDTNamespace.to_julian_date.html" />
-    <link rel="prev" title="polars_xdt.ExprXDTNamespace.offset_by" href="polars_xdt.ExprXDTNamespace.offset_by.html" />
+    <link rel="prev" title="polars_xdt.ExprXDTNamespace.to_local_datetime" href="polars_xdt.ExprXDTNamespace.to_local_datetime.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -298,8 +297,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.from_local_datetime.html">polars_xdt.ExprXDTNamespace.from_local_datetime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.is_workday.html">polars_xdt.ExprXDTNamespace.is_workday</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.offset_by.html">polars_xdt.ExprXDTNamespace.offset_by</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">polars_xdt.ExprXDTNamespace.to_local_datetime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.to_julian_date.html">polars_xdt.ExprXDTNamespace.to_julian_date</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polars_xdt.ExprXDTNamespace.to_local_datetime.html">polars_xdt.ExprXDTNamespace.to_local_datetime</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">polars_xdt.ExprXDTNamespace.to_julian_date</a></li>
 </ul>
 </div>
 </nav></div>
@@ -357,56 +356,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="polars-xdt-exprxdtnamespace-to-local-datetime">
-<h1>polars_xdt.ExprXDTNamespace.to_local_datetime<a class="headerlink" href="#polars-xdt-exprxdtnamespace-to-local-datetime" title="Link to this heading">#</a></h1>
+  <section id="polars-xdt-exprxdtnamespace-to-julian-date">
+<h1>polars_xdt.ExprXDTNamespace.to_julian_date<a class="headerlink" href="#polars-xdt-exprxdtnamespace-to-julian-date" title="Link to this heading">#</a></h1>
 <dl class="py method">
-<dt class="sig sig-object py" id="polars_xdt.ExprXDTNamespace.to_local_datetime">
-<span class="sig-prename descclassname"><span class="pre">ExprXDTNamespace.</span></span><span class="sig-name descname"><span class="pre">to_local_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_zone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Expr</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">XDTExpr</span></span></span><a class="headerlink" href="#polars_xdt.ExprXDTNamespace.to_local_datetime" title="Link to this definition">#</a></dt>
-<dd><p>Convert to local datetime in given time zone.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>time_zone</strong></dt><dd><p>Time zone to convert to.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt>Expr</dt><dd><p>Expression of data type <code class="xref py py-class docutils literal notranslate"><span class="pre">DateTime</span></code>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<dt class="sig sig-object py" id="polars_xdt.ExprXDTNamespace.to_julian_date">
+<span class="sig-prename descclassname"><span class="pre">ExprXDTNamespace.</span></span><span class="sig-name descname"><span class="pre">to_julian_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">XDTExpr</span></span></span><a class="headerlink" href="#polars_xdt.ExprXDTNamespace.to_julian_date" title="Link to this definition">#</a></dt>
+<dd><p>Return the Julian date corresponding to given datetimes.</p>
 <p class="rubric">Examples</p>
-<p>You can use <cite>to_local_datetime</cite> to figure out how a tz-aware datetime
-will be expressed as a local datetime.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">polars_xdt</span>  <span class="c1"># noqa: F401</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="p">{</span>
-<span class="gp">... </span>        <span class="s2">&quot;date_col&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
-<span class="gp">... </span>        <span class="s2">&quot;timezone&quot;</span><span class="p">:</span> <span class="p">[</span>
-<span class="gp">... </span>            <span class="s2">&quot;Europe/London&quot;</span><span class="p">,</span>
-<span class="gp">... </span>            <span class="s2">&quot;Africa/Kigali&quot;</span><span class="p">,</span>
-<span class="gp">... </span>            <span class="s2">&quot;America/New_York&quot;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s2">&quot;date_col&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="gp">... </span>            <span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">51</span><span class="p">),</span>
 <span class="gp">... </span>        <span class="p">],</span>
 <span class="gp">... </span>    <span class="p">}</span>
-<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date_col&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">replace_time_zone</span><span class="p">(</span><span class="s2">&quot;UTC&quot;</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date_col&quot;</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="o">.</span><span class="n">xdt</span><span class="o">.</span><span class="n">to_local_datetime</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;timezone&quot;</span><span class="p">))</span>
-<span class="gp">... </span>    <span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;local_dt&quot;</span><span class="p">)</span>
 <span class="gp">... </span><span class="p">)</span>
-<span class="go">shape: (3, 3)</span>
-<span class="go">┌─────────────────────────┬──────────────────┬─────────────────────┐</span>
-<span class="go">│ date_col                ┆ timezone         ┆ local_dt            │</span>
-<span class="go">│ ---                     ┆ ---              ┆ ---                 │</span>
-<span class="go">│ datetime[μs, UTC]       ┆ str              ┆ datetime[μs]        │</span>
-<span class="go">╞═════════════════════════╪══════════════════╪═════════════════════╡</span>
-<span class="go">│ 2020-10-10 00:00:00 UTC ┆ Europe/London    ┆ 2020-10-10 01:00:00 │</span>
-<span class="go">│ 2020-10-10 00:00:00 UTC ┆ Africa/Kigali    ┆ 2020-10-10 02:00:00 │</span>
-<span class="go">│ 2020-10-10 00:00:00 UTC ┆ America/New_York ┆ 2020-10-09 20:00:00 │</span>
-<span class="go">└─────────────────────────┴──────────────────┴─────────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">pl</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span><span class="n">float_precision</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="k">as</span> <span class="n">cfg</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">julian_date</span><span class="o">=</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;date_col&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">xdt</span><span class="o">.</span><span class="n">to_julian_date</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="go">shape: (2, 2)</span>
+<span class="go">┌─────────────────────┬────────────────────┐</span>
+<span class="go">│ date_col            ┆ julian_date        │</span>
+<span class="go">│ ---                 ┆ ---                │</span>
+<span class="go">│ datetime[μs]        ┆ f64                │</span>
+<span class="go">╞═════════════════════╪════════════════════╡</span>
+<span class="go">│ 2013-01-01 00:30:00 ┆ 2456293.5208333335 │</span>
+<span class="go">│ 2024-01-07 13:18:51 ┆ 2460317.0547569445 │</span>
+<span class="go">└─────────────────────┴────────────────────┘</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -424,22 +403,13 @@ will be expressed as a local datetime.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="polars_xdt.ExprXDTNamespace.offset_by.html"
+       href="polars_xdt.ExprXDTNamespace.to_local_datetime.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">polars_xdt.ExprXDTNamespace.offset_by</p>
+        <p class="prev-next-title">polars_xdt.ExprXDTNamespace.to_local_datetime</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="polars_xdt.ExprXDTNamespace.to_julian_date.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">polars_xdt.ExprXDTNamespace.to_julian_date</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -459,14 +429,14 @@ will be expressed as a local datetime.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polars_xdt.ExprXDTNamespace.to_local_datetime"><code class="docutils literal notranslate"><span class="pre">ExprXDTNamespace.to_local_datetime()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polars_xdt.ExprXDTNamespace.to_julian_date"><code class="docutils literal notranslate"><span class="pre">ExprXDTNamespace.to_julian_date()</span></code></a></li>
 </ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/api/polars_xdt.ExprXDTNamespace.to_local_datetime.rst.txt">
+    <a href="../_sources/api/polars_xdt.ExprXDTNamespace.to_julian_date.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

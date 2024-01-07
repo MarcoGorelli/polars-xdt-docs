@@ -1,0 +1,6 @@
+﻿polars\_xdt.ExprXDTNamespace.base\_utc\_offset
+==============================================
+
+.. currentmodule:: polars_xdt
+
+.. automethod:: ExprXDTNamespace.base_utc_offset

@@ -295,10 +295,12 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.workday_count.html">polars_xdt.workday_count</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.base_utc_offset.html">polars_xdt.ExprXDTNamespace.base_utc_offset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.ceil.html">polars_xdt.ExprXDTNamespace.ceil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.day_name.html">polars_xdt.ExprXDTNamespace.day_name</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.dst_offset.html">polars_xdt.ExprXDTNamespace.dst_offset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.format_localized.html">polars_xdt.ExprXDTNamespace.format_localized</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.from_local_datetime.html">polars_xdt.ExprXDTNamespace.from_local_datetime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.is_workday.html">polars_xdt.ExprXDTNamespace.is_workday</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.month_name.html">polars_xdt.ExprXDTNamespace.month_name</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.offset_by.html">polars_xdt.ExprXDTNamespace.offset_by</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.to_local_datetime.html">polars_xdt.ExprXDTNamespace.to_local_datetime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.to_julian_date.html">polars_xdt.ExprXDTNamespace.to_julian_date</a></li>
@@ -372,17 +374,23 @@ document.write(`
 <tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.ceil.html#polars_xdt.ExprXDTNamespace.ceil" title="polars_xdt.ExprXDTNamespace.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.ceil</span></code></a>(every)</p></td>
 <td><p>Find &quot;ceiling&quot; of datetime.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.dst_offset.html#polars_xdt.ExprXDTNamespace.dst_offset" title="polars_xdt.ExprXDTNamespace.dst_offset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.dst_offset</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.day_name.html#polars_xdt.ExprXDTNamespace.day_name" title="polars_xdt.ExprXDTNamespace.day_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.day_name</span></code></a>([locale])</p></td>
+<td><p>Return day name, in specified locale (if specified).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.dst_offset.html#polars_xdt.ExprXDTNamespace.dst_offset" title="polars_xdt.ExprXDTNamespace.dst_offset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.dst_offset</span></code></a>()</p></td>
 <td><p>Additional offset currently in effect (typically due to daylight saving time).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.format_localized.html#polars_xdt.ExprXDTNamespace.format_localized" title="polars_xdt.ExprXDTNamespace.format_localized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.format_localized</span></code></a>(format)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.format_localized.html#polars_xdt.ExprXDTNamespace.format_localized" title="polars_xdt.ExprXDTNamespace.format_localized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.format_localized</span></code></a>(format)</p></td>
 <td><p>Convert to local datetime in given time zone.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.from_local_datetime.html#polars_xdt.ExprXDTNamespace.from_local_datetime" title="polars_xdt.ExprXDTNamespace.from_local_datetime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.from_local_datetime</span></code></a>(...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.from_local_datetime.html#polars_xdt.ExprXDTNamespace.from_local_datetime" title="polars_xdt.ExprXDTNamespace.from_local_datetime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.from_local_datetime</span></code></a>(...)</p></td>
 <td><p>Converts from local datetime in given time zone to new timezone.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.is_workday.html#polars_xdt.ExprXDTNamespace.is_workday" title="polars_xdt.ExprXDTNamespace.is_workday"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.is_workday</span></code></a>(*[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.is_workday.html#polars_xdt.ExprXDTNamespace.is_workday" title="polars_xdt.ExprXDTNamespace.is_workday"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.is_workday</span></code></a>(*[, ...])</p></td>
 <td><p>Determine whether a day is a workday.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.month_name.html#polars_xdt.ExprXDTNamespace.month_name" title="polars_xdt.ExprXDTNamespace.month_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.month_name</span></code></a>([locale])</p></td>
+<td><p>Return month name, in specified locale (if specified).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.ExprXDTNamespace.offset_by.html#polars_xdt.ExprXDTNamespace.offset_by" title="polars_xdt.ExprXDTNamespace.offset_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ExprXDTNamespace.offset_by</span></code></a>(by, *)</p></td>
 <td><p>Offset this date by a relative time offset.</p></td>

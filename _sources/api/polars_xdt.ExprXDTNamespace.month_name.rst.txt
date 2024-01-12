@@ -1,0 +1,6 @@
+﻿polars\_xdt.ExprXDTNamespace.month\_name
+========================================
+
+.. currentmodule:: polars_xdt
+
+.. automethod:: ExprXDTNamespace.month_name

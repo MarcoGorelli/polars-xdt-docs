@@ -1,0 +1,6 @@
+﻿polars\_xdt.to\_julian\_date
+============================
+
+.. currentmodule:: polars_xdt
+
+.. autofunction:: to_julian_date

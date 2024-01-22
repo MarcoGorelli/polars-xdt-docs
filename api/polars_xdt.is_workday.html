@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>polars_xdt.workday_count &#8212; polars-xdt  documentation</title>
+    <title>polars_xdt.is_workday &#8212; polars-xdt  documentation</title>
   
   
   
@@ -43,11 +43,11 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api/polars_xdt.workday_count';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/polars_xdt.is_workday';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="polars_xdt.ceil" href="polars_xdt.ceil.html" />
-    <link rel="prev" title="polars_xdt.date_range" href="polars_xdt.date_range.html" />
+    <link rel="next" title="polars_xdt.month_name" href="polars_xdt.month_name.html" />
+    <link rel="prev" title="polars_xdt.from_local_datetime" href="polars_xdt.from_local_datetime.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -292,12 +292,12 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.date_range.html">polars_xdt.date_range</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">polars_xdt.workday_count</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polars_xdt.workday_count.html">polars_xdt.workday_count</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.ceil.html">polars_xdt.ceil</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.day_name.html">polars_xdt.day_name</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.format_localized.html">polars_xdt.format_localized</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.from_local_datetime.html">polars_xdt.from_local_datetime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="polars_xdt.is_workday.html">polars_xdt.is_workday</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">polars_xdt.is_workday</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.month_name.html">polars_xdt.month_name</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.offset_by.html">polars_xdt.offset_by</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.to_local_datetime.html">polars_xdt.to_local_datetime</a></li>
@@ -342,7 +342,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../API.html" class="nav-link">API</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">polars_xdt.w...</li>
+    <li class="breadcrumb-item active" aria-current="page">polars_xdt.i...</li>
   </ul>
 </nav>
 </div>
@@ -359,18 +359,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="polars-xdt-workday-count">
-<h1>polars_xdt.workday_count<a class="headerlink" href="#polars-xdt-workday-count" title="Link to this heading">#</a></h1>
+  <section id="polars-xdt-is-workday">
+<h1>polars_xdt.is_workday<a class="headerlink" href="#polars-xdt-is-workday" title="Link to this heading">#</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="polars_xdt.workday_count">
-<span class="sig-prename descclassname"><span class="pre">polars_xdt.</span></span><span class="sig-name descname"><span class="pre">workday_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_dates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntoExpr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_dates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntoExpr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('Sat',</span> <span class="pre">'Sun')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holidays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">date</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pl.Expr</span></span></span><a class="headerlink" href="#polars_xdt.workday_count" title="Link to this definition">#</a></dt>
-<dd><p>Count the number of workdays between two columns of dates.</p>
+<dt class="sig sig-object py" id="polars_xdt.is_workday">
+<span class="sig-prename descclassname"><span class="pre">polars_xdt.</span></span><span class="sig-name descname"><span class="pre">is_workday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntoExpr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('Sat',</span> <span class="pre">'Sun')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holidays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">date</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pl.Expr</span></span></span><a class="headerlink" href="#polars_xdt.is_workday" title="Link to this definition">#</a></dt>
+<dd><p>Determine whether a day is a workday.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>start_dates</strong></dt><dd><p>Start date(s). This can be a string column, a date column, or a single date.</p>
-</dd>
-<dt><strong>end_dates</strong></dt><dd><p>End date(s). This can be a string column, a date column, or a single date.</p>
+<dt><strong>expr</strong></dt><dd><p>Input expression.</p>
 </dd>
 <dt><strong>weekend</strong></dt><dd><p>The days of the week that are considered weekends. Defaults to (“Sat”, “Sun”).</p>
 </dd>
@@ -391,21 +389,24 @@ be a list of <code class="docutils literal notranslate"><span class="pre">dateti
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">polars_xdt</span> <span class="k">as</span> <span class="nn">xdt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="p">{</span>
-<span class="gp">... </span>        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)],</span>
-<span class="gp">... </span>        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">)],</span>
+<span class="gp">... </span>        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="gp">... </span>            <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="p">],</span>
 <span class="gp">... </span>    <span class="p">}</span>
 <span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="n">n_business_days</span><span class="o">=</span><span class="n">xdt</span><span class="o">.</span><span class="n">workday_count</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">))</span>
-<span class="go">shape: (3, 3)</span>
-<span class="go">┌────────────┬────────────┬─────────────────┐</span>
-<span class="go">│ start      ┆ end        ┆ n_business_days │</span>
-<span class="go">│ ---        ┆ ---        ┆ ---             │</span>
-<span class="go">│ date       ┆ date       ┆ i32             │</span>
-<span class="go">╞════════════╪════════════╪═════════════════╡</span>
-<span class="go">│ 2023-01-04 ┆ 2023-02-08 ┆ 25              │</span>
-<span class="go">│ 2023-05-01 ┆ 2023-05-02 ┆ 1               │</span>
-<span class="go">│ 2023-09-09 ┆ 2023-12-30 ┆ 80              │</span>
-<span class="go">└────────────┴────────────┴─────────────────┘</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="n">is_workday</span><span class="o">=</span><span class="n">xdt</span><span class="o">.</span><span class="n">is_workday</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">))</span>
+<span class="go">shape: (3, 2)</span>
+<span class="go">┌────────────┬────────────┐</span>
+<span class="go">│ date       ┆ is_workday │</span>
+<span class="go">│ ---        ┆ ---        │</span>
+<span class="go">│ date       ┆ bool       │</span>
+<span class="go">╞════════════╪════════════╡</span>
+<span class="go">│ 2023-01-04 ┆ true       │</span>
+<span class="go">│ 2023-05-01 ┆ true       │</span>
+<span class="go">│ 2023-09-09 ┆ false      │</span>
+<span class="go">└────────────┴────────────┘</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -423,20 +424,20 @@ be a list of <code class="docutils literal notranslate"><span class="pre">dateti
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="polars_xdt.date_range.html"
+       href="polars_xdt.from_local_datetime.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">polars_xdt.date_range</p>
+        <p class="prev-next-title">polars_xdt.from_local_datetime</p>
       </div>
     </a>
     <a class="right-next"
-       href="polars_xdt.ceil.html"
+       href="polars_xdt.month_name.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">polars_xdt.ceil</p>
+        <p class="prev-next-title">polars_xdt.month_name</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -458,14 +459,14 @@ be a list of <code class="docutils literal notranslate"><span class="pre">dateti
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polars_xdt.workday_count"><code class="docutils literal notranslate"><span class="pre">workday_count()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polars_xdt.is_workday"><code class="docutils literal notranslate"><span class="pre">is_workday()</span></code></a></li>
 </ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/api/polars_xdt.workday_count.rst.txt">
+    <a href="../_sources/api/polars_xdt.is_workday.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

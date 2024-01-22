@@ -1,0 +1,6 @@
+﻿polars\_xdt.from\_local\_datetime
+=================================
+
+.. currentmodule:: polars_xdt
+
+.. autofunction:: from_local_datetime

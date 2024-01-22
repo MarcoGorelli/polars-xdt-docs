@@ -1,0 +1,6 @@
+﻿polars\_xdt.is\_workday
+=======================
+
+.. currentmodule:: polars_xdt
+
+.. autofunction:: is_workday

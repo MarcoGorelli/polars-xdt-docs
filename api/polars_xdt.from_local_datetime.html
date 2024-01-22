@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>polars_xdt.workday_count &#8212; polars-xdt  documentation</title>
+    <title>polars_xdt.from_local_datetime &#8212; polars-xdt  documentation</title>
   
   
   
@@ -43,11 +43,11 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api/polars_xdt.workday_count';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/polars_xdt.from_local_datetime';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="polars_xdt.ceil" href="polars_xdt.ceil.html" />
-    <link rel="prev" title="polars_xdt.date_range" href="polars_xdt.date_range.html" />
+    <link rel="next" title="polars_xdt.is_workday" href="polars_xdt.is_workday.html" />
+    <link rel="prev" title="polars_xdt.format_localized" href="polars_xdt.format_localized.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -292,11 +292,11 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.date_range.html">polars_xdt.date_range</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">polars_xdt.workday_count</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polars_xdt.workday_count.html">polars_xdt.workday_count</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.ceil.html">polars_xdt.ceil</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.day_name.html">polars_xdt.day_name</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.format_localized.html">polars_xdt.format_localized</a></li>
-<li class="toctree-l1"><a class="reference internal" href="polars_xdt.from_local_datetime.html">polars_xdt.from_local_datetime</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">polars_xdt.from_local_datetime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.is_workday.html">polars_xdt.is_workday</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.month_name.html">polars_xdt.month_name</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polars_xdt.offset_by.html">polars_xdt.offset_by</a></li>
@@ -342,7 +342,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../API.html" class="nav-link">API</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">polars_xdt.w...</li>
+    <li class="breadcrumb-item active" aria-current="page">polars_xdt.f...</li>
   </ul>
 </nav>
 </div>
@@ -359,53 +359,71 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="polars-xdt-workday-count">
-<h1>polars_xdt.workday_count<a class="headerlink" href="#polars-xdt-workday-count" title="Link to this heading">#</a></h1>
+  <section id="polars-xdt-from-local-datetime">
+<h1>polars_xdt.from_local_datetime<a class="headerlink" href="#polars-xdt-from-local-datetime" title="Link to this heading">#</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="polars_xdt.workday_count">
-<span class="sig-prename descclassname"><span class="pre">polars_xdt.</span></span><span class="sig-name descname"><span class="pre">workday_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_dates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntoExpr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_dates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntoExpr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('Sat',</span> <span class="pre">'Sun')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holidays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">date</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pl.Expr</span></span></span><a class="headerlink" href="#polars_xdt.workday_count" title="Link to this definition">#</a></dt>
-<dd><p>Count the number of workdays between two columns of dates.</p>
+<dt class="sig sig-object py" id="polars_xdt.from_local_datetime">
+<span class="sig-prename descclassname"><span class="pre">polars_xdt.</span></span><span class="sig-name descname"><span class="pre">from_local_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntoExpr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_tz</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_tz</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ambiguous</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Ambiguous</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'raise'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pl.Expr</span></span></span><a class="headerlink" href="#polars_xdt.from_local_datetime" title="Link to this definition">#</a></dt>
+<dd><p>Convert from local datetime in given time zone to new timezone.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>start_dates</strong></dt><dd><p>Start date(s). This can be a string column, a date column, or a single date.</p>
+<dt><strong>expr</strong></dt><dd><p>Expression to convert.</p>
 </dd>
-<dt><strong>end_dates</strong></dt><dd><p>End date(s). This can be a string column, a date column, or a single date.</p>
+<dt><strong>from_tz</strong></dt><dd><p>Current timezone of each datetime</p>
 </dd>
-<dt><strong>weekend</strong></dt><dd><p>The days of the week that are considered weekends. Defaults to (“Sat”, “Sun”).</p>
+<dt><strong>to_tz</strong></dt><dd><p>Timezone to convert to</p>
 </dd>
-<dt><strong>holidays</strong></dt><dd><p>The holidays to exclude from the calculation. Defaults to None. This should
-be a list of <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code> s.</p>
+<dt><strong>ambiguous</strong></dt><dd><p>Determine how to deal with ambiguous datetimes:</p>
+<ul class="simple">
+<li><p><cite>‘raise’</cite> (default): raise</p></li>
+<li><p><cite>‘earliest’</cite>: use the earliest datetime</p></li>
+<li><p><cite>‘latest’</cite>: use the latest datetime</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt>polars.Expr</dt><dd></dd>
+<dt>Expr</dt><dd><p>Expression of data type <code class="xref py py-class docutils literal notranslate"><span class="pre">DateTime</span></code>.</p>
+</dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">polars</span> <span class="k">as</span> <span class="nn">pl</span>
+<p>You can go from a localized datetime back to expressing the datetimes
+in a single timezone with <cite>from_local_datetime</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">polars_xdt</span> <span class="k">as</span> <span class="nn">xdt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="p">{</span>
-<span class="gp">... </span>        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)],</span>
-<span class="gp">... </span>        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">)],</span>
+<span class="gp">... </span>        <span class="s2">&quot;local_dt&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="gp">... </span>            <span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="p">],</span>
+<span class="gp">... </span>        <span class="s2">&quot;timezone&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="gp">... </span>            <span class="s2">&quot;Europe/London&quot;</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="s2">&quot;Africa/Kigali&quot;</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="s2">&quot;America/New_York&quot;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="p">],</span>
 <span class="gp">... </span>    <span class="p">}</span>
 <span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="n">n_business_days</span><span class="o">=</span><span class="n">xdt</span><span class="o">.</span><span class="n">workday_count</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">xdt</span><span class="o">.</span><span class="n">from_local_datetime</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="s2">&quot;local_dt&quot;</span><span class="p">,</span> <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;timezone&quot;</span><span class="p">),</span> <span class="s2">&quot;UTC&quot;</span>
+<span class="gp">... </span>    <span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
 <span class="go">shape: (3, 3)</span>
-<span class="go">┌────────────┬────────────┬─────────────────┐</span>
-<span class="go">│ start      ┆ end        ┆ n_business_days │</span>
-<span class="go">│ ---        ┆ ---        ┆ ---             │</span>
-<span class="go">│ date       ┆ date       ┆ i32             │</span>
-<span class="go">╞════════════╪════════════╪═════════════════╡</span>
-<span class="go">│ 2023-01-04 ┆ 2023-02-08 ┆ 25              │</span>
-<span class="go">│ 2023-05-01 ┆ 2023-05-02 ┆ 1               │</span>
-<span class="go">│ 2023-09-09 ┆ 2023-12-30 ┆ 80              │</span>
-<span class="go">└────────────┴────────────┴─────────────────┘</span>
+<span class="go">┌─────────────────────┬──────────────────┬─────────────────────────┐</span>
+<span class="go">│ local_dt            ┆ timezone         ┆ date                    │</span>
+<span class="go">│ ---                 ┆ ---              ┆ ---                     │</span>
+<span class="go">│ datetime[μs]        ┆ str              ┆ datetime[μs, UTC]       │</span>
+<span class="go">╞═════════════════════╪══════════════════╪═════════════════════════╡</span>
+<span class="go">│ 2020-10-10 01:00:00 ┆ Europe/London    ┆ 2020-10-10 00:00:00 UTC │</span>
+<span class="go">│ 2020-10-10 02:00:00 ┆ Africa/Kigali    ┆ 2020-10-10 00:00:00 UTC │</span>
+<span class="go">│ 2020-10-09 20:00:00 ┆ America/New_York ┆ 2020-10-10 00:00:00 UTC │</span>
+<span class="go">└─────────────────────┴──────────────────┴─────────────────────────┘</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -423,20 +441,20 @@ be a list of <code class="docutils literal notranslate"><span class="pre">dateti
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="polars_xdt.date_range.html"
+       href="polars_xdt.format_localized.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">polars_xdt.date_range</p>
+        <p class="prev-next-title">polars_xdt.format_localized</p>
       </div>
     </a>
     <a class="right-next"
-       href="polars_xdt.ceil.html"
+       href="polars_xdt.is_workday.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">polars_xdt.ceil</p>
+        <p class="prev-next-title">polars_xdt.is_workday</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -458,14 +476,14 @@ be a list of <code class="docutils literal notranslate"><span class="pre">dateti
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polars_xdt.workday_count"><code class="docutils literal notranslate"><span class="pre">workday_count()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polars_xdt.from_local_datetime"><code class="docutils literal notranslate"><span class="pre">from_local_datetime()</span></code></a></li>
 </ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/api/polars_xdt.workday_count.rst.txt">
+    <a href="../_sources/api/polars_xdt.from_local_datetime.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

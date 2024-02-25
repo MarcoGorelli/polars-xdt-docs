@@ -1,0 +1,6 @@
+﻿polars\_xdt.arg\_previous\_greater
+==================================
+
+.. currentmodule:: polars_xdt
+
+.. autofunction:: arg_previous_greater

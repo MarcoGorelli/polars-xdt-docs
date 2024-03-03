@@ -361,7 +361,7 @@ document.write(`
 <h1>polars_xdt.ewma_by_time<a class="headerlink" href="#polars-xdt-ewma-by-time" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="polars_xdt.ewma_by_time">
-<span class="sig-prename descclassname"><span class="pre">polars_xdt.</span></span><span class="sig-name descname"><span class="pre">ewma_by_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntoExpr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">times</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntoExpr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">halflife</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">timedelta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adjust</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pl.Expr</span></span></span><a class="headerlink" href="#polars_xdt.ewma_by_time" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">polars_xdt.</span></span><span class="sig-name descname"><span class="pre">ewma_by_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntoExpr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">times</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntoExpr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">half_life</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">timedelta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adjust</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pl.Expr</span></span></span><a class="headerlink" href="#polars_xdt.ewma_by_time" title="Link to this definition">#</a></dt>
 <dd><p>Calculate time-based exponentially weighted moving average.</p>
 <p>Given observations <span class="math notranslate nohighlight">\(x_1, x_2, \ldots, x_n\)</span> at times
 <span class="math notranslate nohighlight">\(t_1, t_2, \ldots, t_n\)</span>, the <strong>unadjusted</strong> EWMA is calculated as</p>
@@ -369,7 +369,7 @@ document.write(`
 <div><div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}y_0 &amp;= x_0\\\alpha_i &amp;= \exp(-\lambda(t_i - t_{i-1}))\\y_i &amp;= \alpha_i x_i + (1 - \alpha_i) y_{i-1}; \quad i &gt; 0\end{aligned}\end{align} \]</div>
 </div></blockquote>
-<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> equals <span class="math notranslate nohighlight">\(\ln(2) / \text{halflife}\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> equals <span class="math notranslate nohighlight">\(\ln(2) / \text{half_life}\)</span>.</p>
 <p>The <strong>adjusted</strong> version is</p>
 <blockquote>
 <div><div class="math notranslate nohighlight">
@@ -382,7 +382,7 @@ document.write(`
 </dd>
 <dt><strong>times</strong></dt><dd><p>Times corresponding to <cite>values</cite>. Should be <code class="docutils literal notranslate"><span class="pre">DateTime</span></code> or <code class="docutils literal notranslate"><span class="pre">Date</span></code>.</p>
 </dd>
-<dt><strong>halflife</strong></dt><dd><p>Unit over which observation decays to half its value.</p>
+<dt><strong>half_life</strong></dt><dd><p>Unit over which observation decays to half its value.</p>
 </dd>
 <dt><strong>adjust</strong></dt><dd><p>Whether to adjust the result to account for the bias towards the
 initial value. Defaults to True.</p>
@@ -414,7 +414,7 @@ initial value. Defaults to True.</p>
 <span class="gp">... </span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">ewma</span><span class="o">=</span><span class="n">xdt</span><span class="o">.</span><span class="n">ewma_by_time</span><span class="p">(</span>
-<span class="gp">... </span>        <span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="s2">&quot;times&quot;</span><span class="p">,</span> <span class="n">halflife</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="s2">&quot;times&quot;</span><span class="p">,</span> <span class="n">half_life</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="p">),</span>
 <span class="gp">... </span><span class="p">)</span>
 <span class="go">shape: (5, 3)</span>

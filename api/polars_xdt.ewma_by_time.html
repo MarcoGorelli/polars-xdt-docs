@@ -373,7 +373,7 @@ document.write(`
 <p>The <strong>adjusted</strong> version is</p>
 <blockquote>
 <div><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}y_0 &amp;= x_0\\\alpha_i &amp;= (\alpha_{i-1} + 1) * \exp(-\lambda(t_i - t_{i-1}))\\y_i &amp;= (x_i + \alpha_i y_{i-1}) / (1. + \alpha_i);\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}y_0 &amp;= x_0\\\alpha_i &amp;= (\alpha_{i-1} + 1) \exp(-\lambda(t_i - t_{i-1}))\\y_i &amp;= (x_i + \alpha_i y_{i-1}) / (1. + \alpha_i);\end{aligned}\end{align} \]</div>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

@@ -1,0 +1,6 @@
+﻿polars\_xdt.ewma\_by\_time
+==========================
+
+.. currentmodule:: polars_xdt
+
+.. autofunction:: ewma_by_time

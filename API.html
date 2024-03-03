@@ -46,7 +46,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'API';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="polars_xdt.arg_previous_greater" href="api/polars_xdt.arg_previous_greater.html" />
+    <link rel="next" title="polars_xdt.date_range" href="api/polars_xdt.date_range.html" />
     <link rel="prev" title="Tutorial" href="tutorial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -287,8 +287,8 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.arg_previous_greater.html">polars_xdt.arg_previous_greater</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.date_range.html">polars_xdt.date_range</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ewma_by_time.html">polars_xdt.ewma_by_time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.workday_count.html">polars_xdt.workday_count</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.ceil.html">polars_xdt.ceil</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.day_name.html">polars_xdt.day_name</a></li>
@@ -357,11 +357,11 @@ document.write(`
 <h1>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h1>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.arg_previous_greater.html#polars_xdt.arg_previous_greater" title="polars_xdt.arg_previous_greater"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.arg_previous_greater</span></code></a>(expr)</p></td>
-<td><p>Find the row count of the previous value greater than the current one.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.date_range.html#polars_xdt.date_range" title="polars_xdt.date_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.date_range</span></code></a>([holidays])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.date_range.html#polars_xdt.date_range" title="polars_xdt.date_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.date_range</span></code></a>([holidays])</p></td>
 <td><p>Create a range of dates with a given interval and filter out weekends and holidays.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.ewma_by_time.html#polars_xdt.ewma_by_time" title="polars_xdt.ewma_by_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.ewma_by_time</span></code></a>(values, *, times, ...)</p></td>
+<td><p>Calculate time-based exponentially weighted moving average.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.workday_count.html#polars_xdt.workday_count" title="polars_xdt.workday_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.workday_count</span></code></a>(start_dates, end_dates)</p></td>
 <td><p>Count the number of workdays between two columns of dates.</p></td>
@@ -417,11 +417,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="api/polars_xdt.arg_previous_greater.html"
+       href="api/polars_xdt.date_range.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">polars_xdt.arg_previous_greater</p>
+        <p class="prev-next-title">polars_xdt.date_range</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

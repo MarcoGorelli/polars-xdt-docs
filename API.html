@@ -296,6 +296,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.from_local_datetime.html">polars_xdt.from_local_datetime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.is_workday.html">polars_xdt.is_workday</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.month_name.html">polars_xdt.month_name</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.month_delta.html">polars_xdt.month_delta</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.offset_by.html">polars_xdt.offset_by</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.to_local_datetime.html">polars_xdt.to_local_datetime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/polars_xdt.to_julian_date.html">polars_xdt.to_julian_date</a></li>
@@ -384,13 +385,16 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.month_name.html#polars_xdt.month_name" title="polars_xdt.month_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.month_name</span></code></a>(expr[, locale])</p></td>
 <td><p>Return month name, in specified locale (if specified).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.offset_by.html#polars_xdt.offset_by" title="polars_xdt.offset_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.offset_by</span></code></a>(expr, by, *[, weekend, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.month_delta.html#polars_xdt.month_delta" title="polars_xdt.month_delta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.month_delta</span></code></a>(start_dates, end_dates)</p></td>
+<td><p>Calculate the number of months between two Series.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.offset_by.html#polars_xdt.offset_by" title="polars_xdt.offset_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.offset_by</span></code></a>(expr, by, *[, weekend, ...])</p></td>
 <td><p>Offset this date by a relative time offset.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.to_local_datetime.html#polars_xdt.to_local_datetime" title="polars_xdt.to_local_datetime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.to_local_datetime</span></code></a>(expr, time_zone)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.to_local_datetime.html#polars_xdt.to_local_datetime" title="polars_xdt.to_local_datetime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.to_local_datetime</span></code></a>(expr, time_zone)</p></td>
 <td><p>Convert to local datetime in given time zone.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/polars_xdt.to_julian_date.html#polars_xdt.to_julian_date" title="polars_xdt.to_julian_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.to_julian_date</span></code></a>(expr)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/polars_xdt.to_julian_date.html#polars_xdt.to_julian_date" title="polars_xdt.to_julian_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polars_xdt.to_julian_date</span></code></a>(expr)</p></td>
 <td><p>Return the Julian date corresponding to given datetimes.</p></td>
 </tr>
 </tbody>
